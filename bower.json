@@ -1,0 +1,26 @@
+{
+  "name": "cannoli",
+  "version": "0.0.0",
+  "homepage": "https://github.com/btford/cannoli",
+  "authors": [
+    "Brian Ford <btford@umich.edu>"
+  ],
+  "description": "kind of okay wiki system thing ok",
+  "main": "app.js",
+  "keywords": [
+    "italian",
+    "dessert"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-markdown-directive": "~0.1.0"
+  }
+}

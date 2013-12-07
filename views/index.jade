@@ -1,0 +1,18 @@
+doctype 5
+html(ng-app="yum")
+  head
+    title sup
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h1
+      a(href='/') Cannoli
+    hr
+    div(ng-view)
+    hr
+    p ☆ <a href="/new/page">new</a>
+
+    script(src='/bower_components/angular/angular.min.js')
+    script(src='/bower_components/angular-route/angular-route.min.js')
+    script(src='/bower_components/showdown/compressed/showdown.js')
+    script(src='/bower_components/angular-markdown-directive/markdown.js')
+    script(src='/javascripts/app.js')
