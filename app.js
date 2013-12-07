@@ -33,6 +33,7 @@ app.get('/partials/:name', routes.partials);
 
 app.post('/api/page', page.set);
 app.get('/api/page/:id', page.get);
+app.delete('/api/page/:id', page.delete);
 
 app.get('/api/index', page.index);
 

@@ -13,6 +13,14 @@ angular.module('yum', ['ngRoute', 'btford.markdown']).
         controller: 'NewPageController',
         templateUrl: '/partials/new-page'
       }).
+      when('/page/:id/edit', {
+        controller: 'EditPageController',
+        templateUrl: '/partials/edit-page'
+      }).
+      when('/page/:id/delete', {
+        controller: 'DelPageController',
+        templateUrl: '/partials/del-page'
+      }).
       otherwise({
         redirectTo: '/'
       });
@@ -33,6 +41,28 @@ angular.module('yum', ['ngRoute', 'btford.markdown']).
     $scope.createPage = function () {
       $http.post('/api/page', $scope.page).success(function (data) {
         $location.url('/page/' + $scope.page.title);
+      });
+    };
+  }).
+  controller('EditPageController', function ($scope, $http, $location, $routeParams) {
+    $scope.page = {};
+    $http.get('/api/page/' + $routeParams.id).success(function (data) {
+      $scope.page = data;
+    });
+    $scope.editPage = function () {
+      $http.post('/api/page', $scope.page).success(function (data) {
+        $location.url('/page/' + $scope.page.title);
+      });
+    };
+  }).
+  controller('DelPageController', function ($scope, $http, $location, $routeParams) {
+    $scope.page = {};
+    $http.get('/api/page/' + $routeParams.id).success(function (data) {
+      $scope.page = data;
+    });
+    $scope.delPage = function () {
+      $http.delete('/api/page/' + $routeParams.id).success(function () {
+        $location.url('/');
       });
     };
   });

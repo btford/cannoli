@@ -1,3 +1,5 @@
 h2 {{page.title}}
+small ☆ <a href="/page/{{page.title}}/edit">edit</a> ☆ <a href="/page/{{page.title}}/delete">delete</a>
+br
 small {{page.time | date:'medium'}}
 .content(btf-markdown="page.content")

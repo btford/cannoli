@@ -28,3 +28,9 @@ exports.set = function (req, res) {
     res.json({id: 'super good job everyone'});
   });
 };
+
+exports.delete = function (req, res) {
+  client.del('page:' + querystring.unescape(req.params.id), function () {
+    res.json({id: 'super good job everyone'});
+  });
+};

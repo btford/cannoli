@@ -1,7 +1,6 @@
-h2 new the page
-form(ng-submit='createPage()')
-  h3 title
-  input(ng-model='page.title')
+h2 edit the page
+form(ng-submit='editPage()')
+  h3 {{page.title}}
   h3 body
   textarea(ng-model='page.content')
   h4
